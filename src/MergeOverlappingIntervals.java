@@ -1,4 +1,4 @@
-package problems.interviewbit;
+package src;
 
 /**
  * Created by gouthamvidyapradhan on 01/09/2016.
