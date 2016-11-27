@@ -1,5 +1,6 @@
 /**
  * Created by gouthamvidyapradhan on 27/11/2016.
+ * Accepted
  */
 public class ExcelColumnNumber
 {
