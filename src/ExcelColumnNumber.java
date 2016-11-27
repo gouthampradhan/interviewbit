@@ -26,7 +26,7 @@ public class ExcelColumnNumber
         {
             char c = _a.charAt(i);
             int pos = CHAR.indexOf(c);
-            result += (pos + 1) * (long)(Math.pow(26, i));
+            result += (pos + 1) * (Math.pow(26, i));
         }
         return result;
     }
