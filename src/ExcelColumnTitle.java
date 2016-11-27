@@ -11,7 +11,7 @@ public class ExcelColumnTitle
         System.out.println(new ExcelColumnTitle().convertToTitle(65251));
     }
 
-    public String convertToTitle(int a)
+    private String convertToTitle(int a)
     {
         int r;
         StringBuilder sb = new StringBuilder("");
