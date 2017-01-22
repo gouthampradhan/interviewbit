@@ -63,10 +63,8 @@ public class SortedPermutationRankWithRepeats
                 charCount.put(a.charAt(i), 1);
         }
 
-        Set<Character> temp = charCount.keySet();
-
         List<Character> sorted = new ArrayList<>();
-        sorted.addAll(temp);
+        sorted.addAll(charCount.keySet());
         Collections.sort(sorted);
 
         int prefixCount, rank = 1;
