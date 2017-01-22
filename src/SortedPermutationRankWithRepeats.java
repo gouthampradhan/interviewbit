@@ -58,14 +58,9 @@ public class SortedPermutationRankWithRepeats
         for(int i = 0, l = a.length(); i < l; i ++)
         {
             if(charCount.containsKey(a.charAt(i)))
-            {
-                int count = charCount.get(a.charAt(i));
-                charCount.put(a.charAt(i), ++count);
-            }
+                charCount.put(a.charAt(i), charCount.get(a.charAt(i)) + 1);
             else
-            {
                 charCount.put(a.charAt(i), 1);
-            }
         }
 
         Set<Character> temp = charCount.keySet();
@@ -84,26 +79,21 @@ public class SortedPermutationRankWithRepeats
             for(char c : sorted)
             {
                 if(c != currChar)
-                {
                     prefixCount += charCount.get(c);
-                }
                 else
                 {
                     for(char c1 : sorted)
-                    {
                         fact = ((fact * factArr[charCount.get(c1)]) %  1000003);
-                    }
-                    int count = charCount.get(c);
-                    charCount.put(c, --count);
+                    charCount.put(c, charCount.get(c) - 1);
                     break;
                 }
             }
-            int balance = l - (i + 1);
+            int postfixCount = l - (i + 1);
             BigInteger modulus = new BigInteger("1000003");
             BigInteger exponent = new BigInteger("1000001");
             BigInteger factBigIn = new BigInteger(String.valueOf(fact));
             int modExpVal = factBigIn.modPow(exponent, modulus).intValue();
-            rank = (int)((rank + (modExpVal * ((long)(prefixCount * factArr[balance]) % 1000003) % 1000003)) % 1000003);
+            rank = (int)((rank + (modExpVal * ((long)(prefixCount * factArr[postfixCount]) % 1000003) % 1000003)) % 1000003);
         }
         return rank;
     }
