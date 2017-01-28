@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Created by gouthamvidyapradhan on 28/01/2017.
- * Accepted
+ * Accepted (O(N x 31))
  */
 public class SingleNumberII
 {
@@ -27,6 +27,11 @@ public class SingleNumberII
         System.out.println(new SingleNumberII().singleNumber(list));
     }
 
+    /**
+     * Check for single number
+     * @param A
+     * @return
+     */
     private int singleNumber(ArrayList<Integer> A)
     {
         int result = 0;
