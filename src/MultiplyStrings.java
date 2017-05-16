@@ -9,12 +9,12 @@ public class MultiplyStrings
      */
     public static void main(String[] args) throws Exception
     {
-            System.out.println(new MultiplyStrings().multiply("1273467126347617236478623784678236487162374678236471236478612397678236487","3452345345345345354"));
+            System.out.println(new MultiplyStrings().multiply("99999","99999"));
     }
 
     private String multiply(String num1, String num2)
     {
-
+        if(num1 == null || num2 == null) return "0";
         int A[][] = new int[num1.length()][num2.length() + 1];
         //123x234
         int k = 0;
@@ -44,7 +44,7 @@ public class MultiplyStrings
             result.append((sum + carry) % 10);
             carry = (sum + carry) / 10;
         }
-        for(int x = 0, l = num1.length(); x < l; x++)
+        for(int x = 1, l = num1.length(); x < l; x++)
         {
             int sum = 0;
             for(int i = x, j = 0, l1 = num1.length() - 1, l2 = num2.length(); i <= l1 && j <= l2; i++, j++)
