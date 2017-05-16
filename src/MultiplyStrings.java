@@ -1,5 +1,6 @@
 /**
  * Created by gouthamvidyapradhan on 16/02/2017.
+ * Accepted
  */
 public class MultiplyStrings
 {
